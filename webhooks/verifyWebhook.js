@@ -9,8 +9,8 @@ const { generateSignedHeader, compareSignature } = require("./sign");
  */
 const verifyWebhookEvent = async (payload, sigHeader, secretKey) => {
   try {
-    // check if json is valid
-    if (!utils.isJsonValid(payload)) throw "Error in parsing payload";
+    // check if json is valid >> request promise sends paresed data 
+    // if (!utils.isJsonValid(payload)) throw "Error in parsing payload";
 
     if (!payload || !sigHeader || !secretKey) {
       throw "No data to verify: secret, payload, publicKey is required";
