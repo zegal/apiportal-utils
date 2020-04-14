@@ -9,8 +9,8 @@ const { generateSignedHeader, compareSignature } = require("./sign");
  */
 const verifyWebhookEvent = async (payload, sigHeader, secretKey) => {
   try {
-    // check if json is valid >> request promise sends paresed data 
-    // if (!utils.isJsonValid(payload)) throw "Error in parsing payload";
+    // check if json is valid >> required to be stringified json
+    if (!utils.isJsonValid(payload)) throw "Error in parsing payload: required stringified payload";
 
     if (!payload || !sigHeader || !secretKey) {
       throw "No data to verify: secret, payload, publicKey is required";
@@ -31,7 +31,7 @@ const verifyWebhookEvent = async (payload, sigHeader, secretKey) => {
     // check for verification
     const isVerified = compareSignature(sigHeader, expectedSignedHeader);
     if (!isVerified) {
-      throw `Signature ${sigHeader} is not valid with ${expectedSignedHeader}${payload}${sig.timestamp}. Please make sure you are passing the payload and header recieved from Zegal`;
+      throw `Signature ${sigHeader} doesn't match with expected value. Please make sure you are passing the stringified payload and signature header received from Zegal`;
     }
     // now verify with timestamp: note that hmac is a hash not a cipher, so we need to send timestamp in the header string too to check
     if (!utils.isValidTime(utils.parseSignHeader(sigHeader, "t"))) {
