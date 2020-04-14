@@ -1,13 +1,13 @@
 {
   "private": false,
-  "version": "0.0.3",
-  "name": "@zegal/apiportal-utils",
+  "version": "0.0.1",
+  "name": "@zegal/zegal-utils",
   "description": "Api services utils",
   "author": "ankitaShrma",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zegal/apiportal-utils.git"
+    "url": "git+https://github.com/zegal/zegal-utils.git"
   },
   "scripts": {
     "test": "yarn jest",
@@ -20,9 +20,9 @@
     "prettier": "^2.0.4"
   },
   "bugs": {
-    "url": "https://github.com/zegal/apiportal-utils/issues"
+    "url": "https://github.com/zegal/zegal-utils/issues"
   },
-  "homepage": "https://github.com/zegal/apiportal-utils#readme",
+  "homepage": "https://github.com/zegal/zegal-utils#readme",
   "directories": {
     "test": "test"
   },

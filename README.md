@@ -1,21 +1,21 @@
-# apiportal-utils
-functionality for zegal api services use
+# zegal-utils
+Functionality for zegal api services use
 
 ## Installation
 
 **npm**
 
-`npm install apiportal-utils`
+`npm install zegal-utils`
 
 ## Usage
 
 **node.js**
 
-`const portal = require("apiportal-utils")`
+`const portal = require("zegal-utils")`
 
 **Example**
 
-basic verification of webhook payload
+Basic verification of webhook payload
 
 ```
 try{
