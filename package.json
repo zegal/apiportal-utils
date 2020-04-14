@@ -18,5 +18,13 @@
   },
   "dependencies": {
     "prettier": "^2.0.4"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/zegal/apiportal-utils/issues"
+  },
+  "homepage": "https://github.com/zegal/apiportal-utils#readme",
+  "directories": {
+    "test": "test"
+  },
+  "license": "MIT"
 }

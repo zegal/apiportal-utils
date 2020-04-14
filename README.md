@@ -18,12 +18,14 @@ functionality for zegal api services use
 basic verification of webhook payload
 
 ```
-const isValidPayload = portal.verifyWebhookEvent(stringifiedJsonPayload, signatureHeader, secretKey)
-if(isValidPayload){
-  // work with the payload
+try{
+  const isValidPayload = portal.verifyWebhookEvent(stringifiedJsonPayload, req.headers["X-Dragon-Law-Signature"], secretKey)
+  if(isValidPayload){
+    // work with the payload
+  }
+} catch(err){
+  // work with portal error
 }
-else{
-  // log error for invalid payload from webhook
-}
+
 ```
 
